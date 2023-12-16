@@ -3,9 +3,10 @@ import cv2
 import cvzone
 import math
 
-cap = cv2.VideoCapture(0)
-cap.set(3, 640)
-cap.set(4, 480)
+# cap = cv2.VideoCapture(0)      for webcam
+# cap.set(3, 640)
+# cap.set(4, 480)
+cap = cv2.VideoCapture("../Videos/people.mp4")        # for video
 
 model = YOLO("../YOLO-Weights/yolov8n.pt")
 
