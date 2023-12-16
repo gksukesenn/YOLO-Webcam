@@ -1,6 +1,7 @@
 from ultralytics import YOLO
 import cv2
 import cvzone
+import math
 
 cap = cv2.VideoCapture(0)
 cap.set(3, 640)
@@ -21,6 +22,8 @@ while True:
             w, h = x2-x1, y2-y1
             cvzone.cornerRect(img, (x1, y1, w, h))
 
-    cv2.imshow("İmage", img)
-    cv2.waitKey(1)
+            conf = math.ceil((box.conf[0]*100))/100
+            print(conf)
 
+    cv2.imshow("Image", img)
+    cv2.waitKey(1)
